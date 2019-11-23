@@ -65,6 +65,7 @@ module.exports.getAll = (req, res, next) => {
         .sort({ [sortProperty]: sort})
         .then((tweet) => {
            return res.status(200).json({tweet})
+           console.log(tweet);
         }).catch(err => {
             next(err);
         })
