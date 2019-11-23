@@ -22,7 +22,7 @@ module.exports.NewTweet = (req, res, next) => {
             }
         }).then(user => { 
             return res
-                .header('Location', '/users/' + req.body._id)
+
                 .status(201)
                 .json({
                     TweetID: req.body.TweetID
@@ -68,13 +68,11 @@ module.exports.getAll = (req, res, next) => {
         }).catch(err => {
             next(err);
         })
-        console.log(tuit);
+
 };
 
 
 module.exports.DeleteSomeTweet = async (req,res,next)=>{
-
-    
         Tweet.findOneAndDelete({TweetID: req.body.TweetID})
         .then((data) =>{
             if (data) res.status(200).json(data);
@@ -86,7 +84,6 @@ module.exports.DeleteSomeTweet = async (req,res,next)=>{
 };
 
 module.exports.update =  (req, res, next) => {
-    
     let update = req.body;
 
     Tweet.findOneAndUpdate({

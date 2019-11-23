@@ -5,9 +5,8 @@ html(lang="en")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         meta(http-equiv="X-UA-Compatible", content="ie=edge")
         title Document
-       
         link(rel="stylesheet", href="/css/bootstrap.css")
-
+        
     body 
         div(class="container")
             form(action="/users", method="post")
@@ -17,10 +16,45 @@ html(lang="en")
                 label(for="Descripcion") Descripcion: 
                 input#id_apellidos.datos(type="text" placeholder="Descripcion" required="" name = "Descripcion")
                 br
-                hr.linea_registro_2
+             
                 .multimedia
                 label.cargar_foto(for="foto") Cargar foto (agrega un link a tu imagen)
                 input.inp_cargar_foto(type="url" name="URL")
                 br
-                button#Guardar.Guardar(name="Guardar" class = "span12" ) Guardar
-                hr.media_luna
+                div(class="row")
+                    button#Guardar.Guardar(name="Guardar" class = "span6") Guardar
+            form(action="/users/todos", method="get")
+                br
+                div(class="row")
+                    button#Guardar.Guardar(name="Guardar" class = "span6") Consultar todos
+            hr
+                    
+            form(action="/users", method="DELETE")
+                br
+                label(for="TweetID") TweetID:
+                input#id_nombres.datos(type="text" placeholder="TweetID" required="" name="TweetID")
+                
+                div(class="row")
+                
+                    button#Guardar.Guardar(name="borrar" class = "span6") Borrar
+           
+             
+            form()
+                label(for="TweetID") TweetID:
+                input#id_nombres.datos(type="text" placeholder="TweetID" required="" name="TweetID")
+                
+                label(for="Descripcion") Descripcion: 
+                input#id_apellidos.datos(type="text" placeholder="Descripcion" required="" name = "Descripcion")
+                
+              
+                .multimedia
+                label.cargar_foto(for="foto") Cargar foto (agrega un link a tu imagen)
+                input.inp_cargar_foto(type="url" name="URL")
+                
+                div(class="row")
+                    button#Guardar.Guardar(name="update" class = "span6") Actualizar
+                    
+
+
+               
+    
