@@ -7,6 +7,9 @@ var sassMiddleware = require('node-sass-middleware');
 var mongoose = require('mongoose');
 var debug = require('debug')('BLOG3:database');
 
+
+
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 mongoose.connect('mongodb+srv://PlatziCourse:fbDOlnUgmTY2kxmu@beyondcluster-1hc2f.mongodb.net/test?retryWrites=true&w=majority', {
